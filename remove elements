@@ -1,0 +1,27 @@
+def remove_element(nums, val):
+    """
+    Removes all occurrences of 'val' from the list 'nums' in-place.
+    
+    Args:
+    nums: List[int] -- The input list.
+    val: int -- The element to be removed.
+    
+    Returns:
+    int -- The length of the modified list.
+    """
+    # Initialize two pointers, one at the beginning and one at the end of the list
+    i = 0
+    n = len(nums)
+    
+    # Iterate through the list
+    while i < n:
+        # If the current element is equal to 'val', replace it with the last element and reduce the length of the list
+        if nums[i] == val:
+            nums[i] = nums[n - 1]
+            n -= 1
+        else:
+            # If the current element is not equal to 'val', move to the next element
+            i += 1
+    
+    # Return the length of the modified list
+    return n
