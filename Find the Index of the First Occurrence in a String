@@ -1,0 +1,15 @@
+# Using find() method
+string = "Hello, world!"
+substring = "world"
+index = string.find(substring)
+if index != -1:
+    print("Substring '{}' found at index: {}".format(substring, index))
+else:
+    print("Substring '{}' not found".format(substring))
+
+# Using index() method
+try:
+    index = string.index(substring)
+    print("Substring '{}' found at index: {}".format(substring, index))
+except ValueError:
+    print("Substring '{}' not found".format(substring))
