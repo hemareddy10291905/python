@@ -1,0 +1,23 @@
+def remove_duplicates(nums):
+    if not nums:
+        return 0
+    
+    # Initialize pointer for non-duplicate elements
+    non_dup_index = 0
+    
+    # Iterate through the array
+    for i in range(1, len(nums)):
+        # If the current element is different from the previous one,
+        # move the non-duplicate pointer forward and overwrite the element at that position
+        if nums[i] != nums[non_dup_index]:
+            non_dup_index += 1
+            nums[non_dup_index] = nums[i]
+    
+    # The length of the array up to non-duplicate index + 1 will be the count of unique elements
+    return non_dup_index + 1
+
+# Example usage:
+nums = [1, 1, 2, 2, 3, 4, 5, 5, 6]
+length = remove_duplicates(nums)
+print("Length after removing duplicates:", length)
+print("Array after removing duplicates:", nums[:length])
